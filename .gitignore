@@ -1,0 +1,42 @@
+# -------------------- 通用 Node/Vite 忽略 --------------------
+
+# 依赖文件夹
+**/node_modules
+/node_modules
+
+# Vite/Webpack 等构建工具的缓存和产物
+**/.vite
+**/dist
+**/build
+**/out
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE 配置和缓存
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-workspace
+*.lock
+
+# -------------------- Monorepo/pnpm 特定忽略 --------------------
+
+# pnpm 的虚拟存储，这是 Monorepo 依赖管理的核心，不需要上传
+# Monorepo 根目录下的 node_modules/ 是 pnpm 的依赖缓存，必须忽略
+# pnpm 在安装时会在子包创建符号链接，这些不需要管，只需忽略顶层 node_modules
+/node_modules
+
+# -------------------- Turborepo 特定忽略 --------------------
+
+# Turborepo 的智能缓存目录，这是本地或 CI/CD 远程缓存数据，绝对不能上传
+.turbo
+
+# -------------------- 系统及临时文件 --------------------
+.DS_Store
+Thumbs.db

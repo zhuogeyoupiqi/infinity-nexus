@@ -1,5 +1,24 @@
 # Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+main-hub/src/
+├── styles/
+│   ├── modules/               # ⚡ 模块样式：存放具体业务模块或布局的样式
+│   │   ├── layout.less        # 基座的核心布局、Header/Sidebar 样式
+│   │   └── micro-app-view.less# 微前端容器的样式
+│   │
+│   ├── base/                  # 📐 基础样式：全局基础配置
+│   │   ├── reset.less         # 样式重置 (可选，Antd自带，但可用于覆盖)
+│   │   └── global.less        # 基础字体、全局 body 样式等
+│   │
+│   ├── theme/                 # 🎨 主题样式：Ant Design Vue 主题定制
+│   │   ├── variables.less     # Ant Design Vue 变量覆盖 (如主色、圆角)
+│   │   └── dark-theme.less    # 暗黑模式或特定主题文件
+│   │
+│   ├── utils/                 # ⚙️ 工具样式：存放 mixins 和函数
+│   │   ├── mixins.less        # 响应式 Mixins、Clearfix 等常用代码段
+│   │   └── functions.less     # Less 函数 (如颜色操作)
+│   │
+│   └── main.less              # 📦 样式入口：负责按顺序引入所有样式文件
+│
+├── App.vue
+└── main.ts                    # 入口文件

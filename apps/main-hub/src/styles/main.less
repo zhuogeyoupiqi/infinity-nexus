@@ -1,0 +1,16 @@
+// 1. 引入工具：确保 mixins 和变量可以在其他文件使用
+@import "./utils/functions.less";
+@import "./utils/mixins.less";
+
+// 2. 引入主题：**覆盖 Ant Design Vue 的默认变量**
+// 这一步必须在引入 Ant Design Vue 之前完成，以实现主题定制
+@import "./theme/variables.less"; 
+// 引入 Ant Design Vue 样式 (通常通过 main.ts 引入，或在这里覆盖)
+
+// 3. 引入基础：重置样式和全局基础样式
+@import "./base/reset.less";
+@import "./base/global.less";
+
+// 4. 引入模块：基座的业务和布局样式
+@import "./modules/layout.less";
+@import "./modules/micro-app-view.less";

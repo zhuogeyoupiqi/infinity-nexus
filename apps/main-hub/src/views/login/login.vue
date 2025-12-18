@@ -44,13 +44,14 @@ defineExpose({})
 <!-- 登录页面 -->
 <template>
   <div class="login-wrapper">
+    <!-- 背景发光圆球，用于营造科技感的动态背景 -->
     <div class="background-orbs">
       <div class="orb orb-1"></div>
       <div class="orb orb-2"></div>
       <div class="orb orb-3"></div>
     </div>
 
-    <!-- 背景发光圆球，用于营造科技感的动态背景 -->
+    <!-- 登录主卡片容器，左侧视觉展示 + 右侧表单 -->
     <div class="login-container">
       
       <!-- 左侧品牌视觉区：Logo、标题、文案、波浪背景等 -->

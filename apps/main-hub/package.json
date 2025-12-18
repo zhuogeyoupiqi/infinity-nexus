@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
     "@micro-zoe/micro-app": "1.0.0-rc.28",
     "ant-design-vue": "^4.2.6",
     "pinia": "^3.0.4",

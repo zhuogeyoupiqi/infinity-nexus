@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import { reactive, ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import { 
   UserOutlined, 
   LockOutlined, 
@@ -23,6 +24,8 @@ const formState = reactive({
   remember: true
 });
 
+const router = useRouter();
+
 // --- 逻辑处理 ---
 const handleLogin = () => {
   loading.value = true;
@@ -34,6 +37,7 @@ const handleLogin = () => {
       duration: 3,
     });
     // TODO: 路由跳转 router.push('/')
+    router.push('/')
   }, 1500);
 };
 

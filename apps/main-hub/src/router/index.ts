@@ -48,7 +48,7 @@ const routes: RouteRecordRaw[] = [
 
 const router = createRouter({
   // 使用 WebHistory，看起来像正常网站
-  history: createWebHistory(), 
+  history: createWebHistory('/'), 
   routes
 });
 

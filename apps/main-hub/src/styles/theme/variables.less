@@ -1,5 +1,18 @@
-// 覆盖 Ant Design Vue 的默认主色
-@primary-color: #007bff; // 你的品牌主色，例如科技蓝
-@link-color: @primary-color;
-@border-radius-base: 4px; // 调整圆角，让界面更有个性
-@layout-header-background: #1a1a1a; // 定制 Header 背景色
+// 桥接 CSS 变量到 Less 变量，方便在 .vue 文件中使用
+// 注意：不要把这些变量传给 AntDesign 的 modifyVars，会导致编译错误
+@app-primary: var(--app-primary);
+@app-gradient: var(--app-gradient);
+@app-bg-layout: var(--app-bg-layout);
+@app-bg-container: var(--app-bg-container);
+@app-bg-sidebar: var(--app-bg-sidebar);
+@app-text-main: var(--app-text-main);
+@app-text-sub: var(--app-text-sub);
+@app-glass-border: var(--app-glass-border);
+
+// 通用圆角
+@app-radius-lg: 16px;
+@app-radius-md: 12px;
+@app-radius-sm: 8px;
+
+// 通用阴影
+@app-shadow-float: 0 10px 30px -5px rgba(0, 0, 0, 0.1);

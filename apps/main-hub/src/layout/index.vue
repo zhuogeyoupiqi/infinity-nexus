@@ -1,19 +1,61 @@
-<script setup lang='ts'>
-// 接受父组件传递的参数
-const props = defineProps({})
-
-// 定义对外暴露的事件，用于子组件向父组件通信
-const emit = defineEmits([])
-
-// 暴露组件内部属性和方法，供父组件通过 ref 调用
-defineExpose({})
-</script>
-
-<!-- 模块名称（中文） -->
 <template>
-  <div>wwwww</div>
+  <a-layout class="layout-wrapper">
+    <AppSider />
+
+    <a-layout>
+      <AppHeader />
+      
+      <AppTags />
+
+      <a-layout-content class="app-content">
+        <router-view v-slot="{ Component, route }">
+          <transition name="fade-transform" mode="out-in">
+            <keep-alive :include="appStore.cachedViews">
+              <component :is="Component" :key="route.path" />
+            </keep-alive>
+          </transition>
+        </router-view>
+      </a-layout-content>
+    </a-layout>
+  </a-layout>
 </template>
 
-<style lang="less" scoped>
+<script setup lang="ts">
+import AppSider from './components/app-sider.vue';
+import AppHeader from './components/app-header.vue';
+import AppTags from './components/app-tags.vue';
+import { useAppStore } from '@/stores/app';
 
+const appStore = useAppStore();
+</script>
+
+<style lang="less" scoped>
+.layout-wrapper {
+  min-height: 100vh;
+  background-color: @app-bg-layout;
+}
+
+.app-content {
+  margin: 16px;
+  background: transparent; // 让内容决定背景，或者透明显示下层
+  min-height: calc(100vh - 120px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 页面切换动画：更精致的滑动淡入 */
+.fade-transform-enter-active,
+.fade-transform-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-transform-enter-from {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
 </style>

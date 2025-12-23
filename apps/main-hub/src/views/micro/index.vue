@@ -43,14 +43,15 @@ defineExpose({})
 
 <!-- 模块名称（中文） -->
 <template>
-  <div class="micro-app-wrapper" v-loading="loading">
+  <div class="micro-app-wrapper">
     <micro-app
       v-if="config"
       :name="config.name"
       :url="config.entry"
       :baseroute="config.baseroute"
-      native-scope
+      router-mode='native-scope'
       keep-alive
+      iframe clear-data destroy fiber disable-patch-request
       @created="handleCreated"
       @mounted="handleMounted"
       @error="handleError"

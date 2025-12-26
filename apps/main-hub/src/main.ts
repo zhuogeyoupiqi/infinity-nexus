@@ -7,7 +7,9 @@ import microApp from '@micro-zoe/micro-app'
 import './styles/main.less' // 引入全局样式入口
 
 // 初始化微前端
-microApp.start()
+microApp.start({
+  disableScopecss: true,
+})
 
 const pinia = createPinia();
 createApp(App).use(pinia).use(router).mount('#app')

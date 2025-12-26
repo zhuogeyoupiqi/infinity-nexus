@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@infinity/utils": "workspace:*",
     "@ant-design/icons-vue": "^7.0.1",
     "@micro-zoe/micro-app": "1.0.0-rc.28",
     "@vueuse/core": "^14.1.0",

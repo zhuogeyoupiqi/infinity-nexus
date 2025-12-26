@@ -37,6 +37,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "@infinity/utils": path.resolve(__dirname, "../../packages/infinity-utils/index.js"),
     }
   },
   // --- 核心 Less 配置部分 ---

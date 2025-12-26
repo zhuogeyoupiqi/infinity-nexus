@@ -1,0 +1,15 @@
+/* 核心修复：强制占满父容器 */
+micro-app-body {
+  display: block;
+  width: 100%;
+  height: 100%; /* 关键：解决子应用高度 100% 无效的问题 */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 如果你的布局是 flex/grid，可能还需要这一行 */
+micro-app {
+  flex: 1; 
+  overflow: hidden; /* 防止子应用内容溢出导致基座滚动条双重出现 */
+}

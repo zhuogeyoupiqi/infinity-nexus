@@ -36,10 +36,9 @@ const appStore = useAppStore();
 }
 
 .app-content {
-  margin: 16px;
-  background: transparent; // 让内容决定背景，或者透明显示下层
-  min-height: calc(100vh - 120px);
   position: relative;
+  padding: 10px;
+  background: transparent; // 让内容决定背景，或者透明显示下层
   overflow: hidden;
 }
 
